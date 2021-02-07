@@ -6,8 +6,21 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+HEADER_DIR = ./hdr
+SOURCE_DIR = ./src
+
+INCLUDEPATH += \
+    $$HEADER_DIR
+
+HEADERS += \
+        $$HEADER_DIR/AppModel.h \
+        hdr/AppEngine.h \
+        hdr/Constants.h
+
 SOURCES += \
-        main.cpp
+    $$SOURCE_DIR/AppModel.cpp \
+    $$SOURCE_DIR/main.cpp \
+    src/AppEngine.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,3 +34,5 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
